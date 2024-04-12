@@ -9,7 +9,6 @@ func main() {
 
 	// 2. Allow the user to select the operation (encrypt or decrypt)
 
-
 	// 3. Allow the user to select the encryption type
 
 
