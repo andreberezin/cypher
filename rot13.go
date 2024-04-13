@@ -1,4 +1,4 @@
-package main
+package cypher
 
 func Rot13_encrypt(s string) string {
 	var result string = "" // you can rename the variable

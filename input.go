@@ -1,4 +1,4 @@
-package main
+package cypher
 
 import "fmt"
 
@@ -12,7 +12,7 @@ func getInput() (toEncrypt bool, encoding string, message string) {
 	fmt.Printf("Select operation: \n 1. ROT13\n 2. Reverse\n 3. Custom\n")
 	fmt.Scan(&encoding)
 	fmt.Printf("You chose: %v}\n\n", encoding)
-	
+
 	// Allow the user to input the message to encrypt/decrypt
 	fmt.Printf("Enter the message:\n")
 	fmt.Scan(&message)
