@@ -1,7 +1,11 @@
 package main
 
-import "fmt"
+//import "fmt"
 
-func Reverse_encrypt() {
-	fmt.Println("This is the reverse encrypt function")
+func Reverse_encrypt(s string) string{
+	//fmt.Println("This is the reverse encrypt function")
+}
+
+func Reverse_decrypt(s string) string{
+
 }

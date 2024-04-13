@@ -5,7 +5,7 @@ import "fmt"
 func main() {
 
 	// 1. Greet the user
-	fmt.Println("Welcome to the Cypher tool!")
+	fmt.Println("Welcome to Awais', Pärtel's and Andre's Cypher tool!")
 
 	// 2. Allow the user to select the operation (encrypt or decrypt)
 
