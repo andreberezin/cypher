@@ -1,11 +1,13 @@
 package main
 
-//import "fmt"
-
 func Reverse_encrypt(s string) string{
-	//fmt.Println("This is the reverse encrypt function")
+	var result string = "" // you can rename the variable
+	
+	return result
 }
 
 func Reverse_decrypt(s string) string{
-
+	var result string = "" // you can rename the variable
+	
+	return result
 }

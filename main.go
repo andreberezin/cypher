@@ -8,6 +8,7 @@ func main() {
 	fmt.Println("Welcome to Awais', Pärtel's and Andre's Cypher tool!")
 
 	// 2. Allow the user to select the operation (encrypt or decrypt)
+	getInput()
 
 	// 3. Allow the user to select the encryption type
 
