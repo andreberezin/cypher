@@ -1,9 +1,19 @@
 package main
 
-lololol
+import "strings"
 
-func Reverse_decrypt(s string) string {
-	var result string = "" // you can rename the variable
+func Reverse_encrypt(s string) string {
+	var result strings.Builder
 
-	return result
+	for _, char := range s {
+		if char >= 'a' && char <= 'z' {
+			result.WriteByte(byte('z' - (char - 'a')))
+		} else if char >= 'A' && char <= 'Z' {
+			result.WriteByte(byte('Z' - (char - 'A')))
+		} else {
+			result.WriteByte(byte(char))
+		}
+	}
+
+	return result.String()
 }
