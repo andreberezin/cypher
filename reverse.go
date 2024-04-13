@@ -1,5 +1,7 @@
 package main
 
+lololol
+
 func Reverse_decrypt(s string) string {
 	var result string = "" // you can rename the variable
 
