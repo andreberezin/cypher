@@ -25,4 +25,4 @@ func encryptcaesar(s string, shift int) string {
 func decrypt_caesar(s string, shift int) string {
     // To decrypt, we shift in the opposite direction, so we negate the shift
     return encrypt_caesar(s, -shift)
-}
+}	
