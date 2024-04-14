@@ -22,5 +22,5 @@ func Rot13_encrypt(s string) string {
 
 // decrypt_rot13 function takes a string encrypted with ROT13 and returns its decrypted form.
 func decrypt_rot13(s string) string {
-	return encrypt_rot13(s) // Since ROT13 encryption and decryption are the same operation, simply return the result of applying ROT13 encryption to the input string.
+	return Rot13_encrypt(s) // Since ROT13 encryption and decryption are the same operation, simply return the result of applying ROT13 encryption to the input string.
 }

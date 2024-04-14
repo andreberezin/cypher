@@ -10,31 +10,37 @@ func main() {
 	// 2. Allow the user to select the operation (encrypt or decrypt)
 	// 3. Allow the user to select the encryption type
 	// 4. Allow the user to input the message to encrypt/decrypt
-	getAndValidateInput()
-	toEncrypt, encoding, message := getAndValidateInput()
+	toEncrypt, encoding, message, shift := getAndValidateInput()
 
 	// 5. Output the result of the operation based on user input
-	getOutput(toEncrypt, encoding, message)
+	//getOutput(toEncrypt, encoding, message, shift)
 
-	//var output string
+	//output := ""
+	if toEncrypt == true {
+		switch encoding {
+		case "rot13":
+			fmt.Println(Rot13_encrypt(message))
+			//output = Rot13_encrypt(message)// encrypt with rot13
+		case "reverse":
+			fmt.Println(encryptreverse(message))
+			//output = encryptreverse(message)// encrypt with reverse
+		case "custom":
+			fmt.Println(encryptcaesar(message, shift))
+			//output = encryptcaesar(message, shift)// encrypt with custom
+		} 
+	} else if toEncrypt == false { // meaning to decrypt
+		switch encoding {
+		case "rot13":
+			fmt.Println(decrypt_rot13(message))
+			//output = decrypt_rot13(message)// decrypt with rot13
+		case "reverse":
+			fmt.Println(encryptreverse(message))
+			//output = encryptreverse(message)// decrypt with reverse
+		case "custom":
+			fmt.Println(decryptcaesar(message, shift)) // decrypt with custom
+		}
+	// output := getOutput(toEncrypt, encoding, message, shift)
 
-	// if toEncrypt == true {
-	// 	switch encoding {
-	// 	case "rot13":
-	// 		// encrypt with rot13
-	// 	case "reverse":
-	// 		// encrypt with reverse
-	// 	case "custom":
-	// 		// encrypt with custom
-	// 	} 
-	// } else if toEncrypt == false { // meaning to decrypt
-	// 	switch encoding {
-	// 	case "rot13":
-	// 		// decrypt with rot13
-	// 	case "reverse":
-	// 		// decrypt with reverse
-	// 	case "custom":
-	// 		// decrypt with custom
-	// 	}
-
+	//return output
+}
 }
