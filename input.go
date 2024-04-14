@@ -26,7 +26,7 @@ func getAndValidateInput() (toEncrypt bool, encoding string, message string, shi
 		case "decrypt", "2":
 			toEncrypt = false
 		default:
-			fmt.Printf("\nInvalid input, enter again.\n")
+			fmt.Printf("\nInvalid input, enter again.\n\n")
 			goto TOENCRYPT
 	}
 
@@ -49,7 +49,7 @@ func getAndValidateInput() (toEncrypt bool, encoding string, message string, shi
             shiftInput, _ = reader.ReadString('\n')
             shiftInput = strings.TrimSpace(shiftInput)
             if !isNumeric(shiftInput) {
-                fmt.Printf("\nInvalid input, please try again.\n")
+                fmt.Printf("\nInvalid input, enter again.\n")
 				continue
             }
             shift, _ = strconv.Atoi(shiftInput) // Convert shiftInput to iteger
