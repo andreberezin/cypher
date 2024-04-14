@@ -13,34 +13,23 @@ func main() {
 	toEncrypt, encoding, message, shift := getAndValidateInput()
 
 	// 5. Output the result of the operation based on user input
-	//getOutput(toEncrypt, encoding, message, shift)
-
-	//output := ""
 	if toEncrypt == true {
 		switch encoding {
 		case "rot13":
-			fmt.Println(Rot13_encrypt(message))
-			//output = Rot13_encrypt(message)// encrypt with rot13
+			fmt.Printf("This is the encrypted message:\n%v\n", Rot13_encrypt(message))
 		case "reverse":
-			fmt.Println(encryptreverse(message))
-			//output = encryptreverse(message)// encrypt with reverse
+			fmt.Printf("This is the encrypted message:\n%v\n", encryptreverse(message))
 		case "custom":
-			fmt.Println(encryptcaesar(message, shift))
-			//output = encryptcaesar(message, shift)// encrypt with custom
+			fmt.Printf("This is the encrypted message:\n%v\n",encryptcaesar(message, shift))
 		} 
-	} else if toEncrypt == false { // meaning to decrypt
+	} else if toEncrypt == false { // to decrypt
 		switch encoding {
 		case "rot13":
-			fmt.Println(decrypt_rot13(message))
-			//output = decrypt_rot13(message)// decrypt with rot13
+			fmt.Printf("This is the decrytped message:\n%v\n", decrypt_rot13(message))
 		case "reverse":
-			fmt.Println(encryptreverse(message))
-			//output = encryptreverse(message)// decrypt with reverse
+			fmt.Printf("This is the decrytped message:\n%v\n", encryptreverse(message))
 		case "custom":
-			fmt.Println(decryptcaesar(message, shift)) // decrypt with custom
+			fmt.Printf("This is the decrytped message:\n%v\n",decryptcaesar(message, shift)) // decrypt with custom
 		}
-	// output := getOutput(toEncrypt, encoding, message, shift)
-
-	//return output
-}
+	}
 }
