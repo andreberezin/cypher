@@ -25,11 +25,11 @@ func main() {
 	} else if !toEncrypt { // to decrypt
 		switch encoding {
 		case "rot13", "1":
-			fmt.Printf("\nDecrytped message using ROT13:\n%v\n\n", decrypt_rot13(message))
+			fmt.Printf("\nDecrypted message using ROT13:\n%v\n\n", decrypt_rot13(message))
 		case "reverse", "2":
-			fmt.Printf("\nDecrytped message using reverse:\n%v\n\n", encryptreverse(message))
+			fmt.Printf("\nDecrypted message using reverse:\n%v\n\n", encryptreverse(message))
 		case "custom", "3":
-			fmt.Printf("\nDecrytped message using custom decryption:\n%v\n\n",decryptcaesar(message, shift)) // decrypt with custom
+			fmt.Printf("\nDecrypted message using custom decryption:\n%v\n\n",decryptcaesar(message, shift)) // decrypt with custom
 		}
 	}
 }
