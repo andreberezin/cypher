@@ -31,7 +31,7 @@ func getAndValidateInput() (toEncrypt bool, encoding string, message string, shi
 	}
 
 	// Allow the user to select the encryption type
-	ENCODING: fmt.Printf("\nSelect operation: \n 1. ROT13\n 2. Reverse\n 3. Custom\n")
+	ENCODING: fmt.Printf("\nSelect cypher: \n 1. ROT13\n 2. Reverse\n 3. Custom\n")
 	fmt.Scan(&encoding)
 	// remove leading and trailing whitespace and make string to lowercase to check validity
 	encoding = strings.ToLower(strings.TrimSpace(encoding)) 
