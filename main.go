@@ -5,7 +5,7 @@ import "fmt"
 func main() {
 
 	// 1. Greet the user
-	fmt.Println("Welcome to Awais', Pärtel's and Andre's Cypher tool!")
+	fmt.Printf("\nWelcome to Awais', Pärtel's and Andre's Cypher tool!\n\n")
 
 	// 2. Allow the user to select the operation (encrypt or decrypt)
 	// 3. Allow the user to select the encryption type
@@ -13,23 +13,23 @@ func main() {
 	toEncrypt, encoding, message, shift := getAndValidateInput()
 
 	// 5. Output the result of the operation based on user input
-	if toEncrypt == true {
+	if toEncrypt {
 		switch encoding {
 		case "rot13", "1":
-			fmt.Printf("This is the encrypted message:\n%v\n", Rot13_encrypt(message))
+			fmt.Printf("\nEncrypted message using ROT13:\n%v\n\n", Rot13_encrypt(message))
 		case "reverse", "2":
-			fmt.Printf("This is the encrypted message:\n%v\n", encryptreverse(message))
+			fmt.Printf("\nEncrypted message using reverse:\n%v\n\n", encryptreverse(message))
 		case "custom", "3":
-			fmt.Printf("This is the encrypted message:\n%v\n",encryptcaesar(message, shift))
+			fmt.Printf("\nEncrypted message using custom encryption:\n%v\n\n",encryptcaesar(message, shift))
 		} 
-	} else if toEncrypt == false { // to decrypt
+	} else if !toEncrypt { // to decrypt
 		switch encoding {
 		case "rot13", "1":
-			fmt.Printf("This is the decrytped message:\n%v\n", decrypt_rot13(message))
+			fmt.Printf("\nDecrytped message using ROT13:\n%v\n\n", decrypt_rot13(message))
 		case "reverse", "2":
-			fmt.Printf("This is the decrytped message:\n%v\n", encryptreverse(message))
+			fmt.Printf("\nDecrytped message using reverse:\n%v\n\n", encryptreverse(message))
 		case "custom", "3":
-			fmt.Printf("This is the decrytped message:\n%v\n",decryptcaesar(message, shift)) // decrypt with custom
+			fmt.Printf("\nDecrytped message using custom decryption:\n%v\n\n",decryptcaesar(message, shift)) // decrypt with custom
 		}
 	}
 }

@@ -8,16 +8,17 @@
 
     1.  Encrypt
     2.  Decrypt
-        encrypt
+        1
         Select operation:
     3.  ROT13
     4.  Reverse
     5.  Custom
-        custom
+        3
         Enter shift number:
         13
         Enter the message:
         Hei
+        This is the encrytped message using custom encryption:
         Urv
 
 3.  Explain the cyphers used
