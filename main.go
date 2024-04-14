@@ -15,20 +15,20 @@ func main() {
 	// 5. Output the result of the operation based on user input
 	if toEncrypt == true {
 		switch encoding {
-		case "rot13":
+		case "rot13", "1":
 			fmt.Printf("This is the encrypted message:\n%v\n", Rot13_encrypt(message))
-		case "reverse":
+		case "reverse", "2":
 			fmt.Printf("This is the encrypted message:\n%v\n", encryptreverse(message))
-		case "custom":
+		case "custom", "3":
 			fmt.Printf("This is the encrypted message:\n%v\n",encryptcaesar(message, shift))
 		} 
 	} else if toEncrypt == false { // to decrypt
 		switch encoding {
-		case "rot13":
+		case "rot13", "1":
 			fmt.Printf("This is the decrytped message:\n%v\n", decrypt_rot13(message))
-		case "reverse":
+		case "reverse", "2":
 			fmt.Printf("This is the decrytped message:\n%v\n", encryptreverse(message))
-		case "custom":
+		case "custom", "3":
 			fmt.Printf("This is the decrytped message:\n%v\n",decryptcaesar(message, shift)) // decrypt with custom
 		}
 	}

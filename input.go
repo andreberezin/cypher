@@ -1,8 +1,11 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
 	"strings"
+	//"strconv"
 )
 
 func getAndValidateInput() (toEncrypt bool, encoding string, message string, shift int) {
@@ -20,7 +23,7 @@ func getAndValidateInput() (toEncrypt bool, encoding string, message string, shi
 		goto TOENCRYPT
 	}
 
-	if toEncrypt_string == "Encrypt" {
+	if toEncrypt_string == "Encrypt" || toEncrypt_string == "1" {
 		toEncrypt = true
 	}
 
@@ -43,11 +46,10 @@ func getAndValidateInput() (toEncrypt bool, encoding string, message string, shi
 	}
 
 	// Allow the user to input the message to encrypt/decrypt
+	reader := bufio.NewReader(os.Stdin) // get user input with bufio to include whitespaces
 	fmt.Printf("Enter the message:\n")
-	fmt.Scan(&message)
-
-	// remove leading and trailing whitespace
-	message = strings.TrimSpace(message) 
+	shiftInput, _ := reader.ReadString('\n')
+	message = strings.TrimSpace(shiftInput)  // remove leading and trailing whitespace
 
 	// return the result of the operation
 	return toEncrypt, encoding, message, shift
