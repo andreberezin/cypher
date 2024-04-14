@@ -44,7 +44,7 @@ func getAndValidateInput() (toEncrypt bool, encoding string, message string, shi
 		break
 	case "custom", "3": // if user chooses custom then ask for shift number and validate the input
 		for {
-            fmt.Printf("\nEnter shift key: ")
+            fmt.Printf("\nEnter shift number: ")
             reader := bufio.NewReader(os.Stdin)
             shiftInput, _ = reader.ReadString('\n')
             shiftInput = strings.TrimSpace(shiftInput)
