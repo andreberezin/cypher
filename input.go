@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 	"strings"
-	//"strconv"
+	"strconv"
 )
 
 func getAndValidateInput() (toEncrypt bool, encoding string, message string, shift int) {
@@ -33,14 +33,20 @@ func getAndValidateInput() (toEncrypt bool, encoding string, message string, shi
 	fmt.Scan(&encoding)
 	// remove leading and trailing whitespace and make string to lowercase to check validity
 	encoding = strings.ToLower(strings.TrimSpace(encoding)) 
+	
 
 	// check if input is valid, else ask for input again
 	switch encoding {
 	case "rot13", "1", "reverse", "2":
 		break
 	case "custom", "3": // if user chooses custom then ask for shift number
-		fmt.Printf("\nEnter shift number:\n")
+		SHIFT: fmt.Printf("\nEnter shift number:\n")
 		fmt.Scan(&shift)
+			
+		if !isNumeric(shift) {
+            fmt.Println("Invalid input. Please enter a number.")
+            goto SHIFT
+        } 
 	default:
 		fmt.Printf("\nInvalid input, enter again.\n")
 		goto ENCODING
@@ -54,4 +60,9 @@ func getAndValidateInput() (toEncrypt bool, encoding string, message string, shi
 
 	// return the result of the operation
 	return toEncrypt, encoding, message, shift
+}
+
+func isNumeric(s string) bool {
+    _, err := strconv.Atoi(s)
+    return err == nil
 }
