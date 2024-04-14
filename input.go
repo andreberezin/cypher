@@ -18,7 +18,7 @@ func getAndValidateInput() (toEncrypt bool, encoding string, message string, shi
 	toEncrypt_string = strings.ToLower(strings.TrimSpace(toEncrypt_string)) 
 
 	// check if input is valid, else ask for input again
-	if toEncrypt_string != "encrypt" && toEncrypt_string != "decrypt" {
+	if toEncrypt_string != "encrypt" && toEncrypt_string != "1"  && toEncrypt_string != "decrypt" && toEncrypt_string != "2" {
 		fmt.Println("Invalid input, enter again.")
 		goto TOENCRYPT
 	}
@@ -31,16 +31,16 @@ func getAndValidateInput() (toEncrypt bool, encoding string, message string, shi
 	ENCODING: fmt.Printf("Select operation: \n 1. ROT13\n 2. Reverse\n 3. Custom\n")
 	fmt.Scan(&encoding)
 
-	// remove leading and trailing whitespace and make string to lowercase
+	// remove leading and trailing whitespace and make string to lowercase to check validity
 	encoding = strings.ToLower(strings.TrimSpace(encoding)) 
 
 	// check if input is valid, else ask for input again
-	if encoding != "rot13" && encoding != "reverse" && encoding != "custom" {
+	if encoding != "rot13" && encoding != "1" && encoding != "reverse" && encoding != "2" && encoding != "custom" && encoding != "3"{
 		fmt.Println("Invalid input, enter again.")
 		goto ENCODING
 	}
 
-	if encoding == "custom" {
+	if encoding == "custom" || encoding == "3" {
 		fmt.Println("Enter shift number:")
 		fmt.Scan(&shift)
 	}
