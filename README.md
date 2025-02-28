@@ -3,8 +3,9 @@
     The user can choose for the tool either to encrypt or decrypt and can choose also the type of encryption/decrytion done from 3 possible variants.
 
 2.  **Explains the usage of the tool, with example**
-    Usage:
 
+Example:
+```bash
     Welcome to Awais', Pärtel's and Andre's Cypher tool!
 
     Select operation:
@@ -28,6 +29,7 @@
 
     This is the encrytped message using custom encryption:
     Urv
+```
 
 3.  **Explain the cyphers used**
 
